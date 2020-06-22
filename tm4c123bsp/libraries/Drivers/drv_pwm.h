@@ -8,17 +8,17 @@
 
 struct tm4c123_pwm
 {
-	  struct tm4c123_pwm_config *config;
-		struct rt_device_pwm  pwm_device;
+	struct tm4c123_pwm_config *config;
+	struct rt_device_pwm  pwm_device;
 };
 
 /* tm4c123 config class */
 struct tm4c123_pwm_config
 {
-	  rt_uint8_t channel;
-	  char *name;
-	  uint32_t   counterMode;
-	  uint32_t   syncMode;
+	rt_uint8_t channel;
+	char *name;
+	uint32_t   counterMode;
+	uint32_t   syncMode;
 };
 
 

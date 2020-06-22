@@ -11,10 +11,10 @@ extern "C" {
 #ifndef PWM0_CONFIG
 #define PWM0_CONFIG                             \
     {                                           \
-       .name                    = "pwm0",       \
-       .channel                 = 0     ,        \
-			 .counterMode             = PWM_GEN_MODE_UP_DOWN , \
-			 .syncMode                = PWM_GEN_MODE_NO_SYNC   \
+        .name                    = "pwm0",       \
+        .channel                 = 0     ,        \
+		.counterMode             = PWM_GEN_MODE_UP_DOWN , \
+		.syncMode                = PWM_GEN_MODE_NO_SYNC   \
     }
 #endif /* PWM0_CONFIG */
 #endif /* BSP_USING_PWM0 */
@@ -23,10 +23,10 @@ extern "C" {
 #ifndef PWM1_CONFIG
 #define PWM1_CONFIG                             \
     {                                           \
-       .name                    = "pwm1",       \
-       .channel                 = 0     ,        \
-			 .counterMode             = PWM_GEN_MODE_UP_DOWN , \
-			 .syncMode                = PWM_GEN_MODE_NO_SYNC   \
+        .name                    = "pwm1",       \
+        .channel                 = 0     ,        \
+		.counterMode             = PWM_GEN_MODE_UP_DOWN , \
+		.syncMode                = PWM_GEN_MODE_NO_SYNC   \
     }
 #endif /* PWM1_CONFIG */
 #endif /* BSP_USING_PWM1 */		
@@ -35,10 +35,10 @@ extern "C" {
 #ifndef PWM2_CONFIG
 #define PWM2_CONFIG                             \
     {                                           \
-       .name                    = "pwm2",       \
-       .channel                 = 0     ,        \
-			 .counterMode             = PWM_GEN_MODE_UP_DOWN , \
-			 .syncMode                = PWM_GEN_MODE_NO_SYNC   \
+        .name                    = "pwm2",       \
+        .channel                 = 0     ,        \
+		.counterMode             = PWM_GEN_MODE_UP_DOWN , \
+		.syncMode                = PWM_GEN_MODE_NO_SYNC   \
     }
 #endif /* PWM2_CONFIG */
 #endif /* BSP_USING_PWM2 */
@@ -47,10 +47,10 @@ extern "C" {
 #ifndef PWM3_CONFIG
 #define PWM3_CONFIG                             \
     {                                           \
-       .name                    = "pwm3",       \
-       .channel                 = 0     ,        \
-			 .counterMode             = PWM_GEN_MODE_UP_DOWN , \
-			 .syncMode                = PWM_GEN_MODE_NO_SYNC   \
+        .name                    = "pwm3",       \
+        .channel                 = 0     ,        \
+		.counterMode             = PWM_GEN_MODE_UP_DOWN , \
+		.syncMode                = PWM_GEN_MODE_NO_SYNC   \
     }
 #endif /* PWM3_CONFIG */
 #endif /* BSP_USING_PWM3 */
@@ -59,10 +59,10 @@ extern "C" {
 #ifndef PWM4_CONFIG
 #define PWM4_CONFIG                             \
     {                                           \
-       .name                    = "pwm4",       \
-       .channel                 = 0     ,        \
-			 .counterMode             = PWM_GEN_MODE_UP_DOWN , \
-			 .syncMode                = PWM_GEN_MODE_NO_SYNC   \
+        .name                    = "pwm4",       \
+        .channel                 = 0     ,        \
+		.counterMode             = PWM_GEN_MODE_UP_DOWN , \
+		.syncMode                = PWM_GEN_MODE_NO_SYNC   \
     }
 #endif /* PWM4_CONFIG */
 #endif /* BSP_USING_PWM4 */
@@ -71,10 +71,10 @@ extern "C" {
 #ifndef PWM5_CONFIG
 #define PWM5_CONFIG                             \
     {                                           \
-       .name                    = "pwm5",       \
-       .channel                 = 0     ,        \
-			 .counterMode             = PWM_GEN_MODE_UP_DOWN , \
-			 .syncMode                = PWM_GEN_MODE_NO_SYNC   \
+        .name                    = "pwm5",       \
+        .channel                 = 0     ,        \
+		.counterMode             = PWM_GEN_MODE_UP_DOWN , \
+		.syncMode                = PWM_GEN_MODE_NO_SYNC   \
     }
 #endif /* PWM5_CONFIG */
 #endif /* BSP_USING_PWM5 */	
@@ -83,10 +83,10 @@ extern "C" {
 #ifndef PWM6_CONFIG
 #define PWM6_CONFIG                             \
     {                                           \
-       .name                    = "pwm6",       \
-       .channel                 = 0    ,         \
-			 .counterMode             = PWM_GEN_MODE_UP_DOWN , \
-			 .syncMode                = PWM_GEN_MODE_NO_SYNC   \
+        .name                    = "pwm6",       \
+        .channel                 = 0    ,         \
+		.counterMode             = PWM_GEN_MODE_UP_DOWN , \
+		.syncMode                = PWM_GEN_MODE_NO_SYNC   \
     }
 #endif /* PWM6_CONFIG */
 #endif /* BSP_USING_PWM6 */	
@@ -95,10 +95,10 @@ extern "C" {
 #ifndef PWM7_CONFIG
 #define PWM7_CONFIG                             \
     {                                           \
-       .name                    = "pwm7",       \
-       .channel                 = 0     ,        \
-			 .counterMode             = PWM_GEN_MODE_UP_DOWN , \
-			 .syncMode                = PWM_GEN_MODE_NO_SYNC   \
+        .name                    = "pwm7",       \
+        .channel                 = 0     ,        \
+		.counterMode             = PWM_GEN_MODE_UP_DOWN , \
+		.syncMode                = PWM_GEN_MODE_NO_SYNC   \
     }
 #endif /* PWM7_CONFIG */
 #endif /* BSP_USING_PWM7 */	

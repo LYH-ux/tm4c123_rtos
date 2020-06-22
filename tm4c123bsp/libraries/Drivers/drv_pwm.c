@@ -172,47 +172,47 @@ static rt_err_t drv_pwm_set(char *name, struct rt_pwm_configuration *configurati
 	  switch(name[3])
 		{
 			 case  '0':
-			   PWMGenPeriodSet(PWM0_BASE, PWM_GEN_0, configuration->period/1000*(sysPwmClock/1000000));    // t(s)/(1/f) = ticks   ns/1000/1000000
-			   PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
-			   PWMGenEnable(PWM0_BASE, PWM_GEN_0);
-				 break;
+			    PWMGenPeriodSet(PWM0_BASE, PWM_GEN_0, configuration->period/1000*(sysPwmClock/1000000));    // t(s)/(1/f) = ticks   ns/1000/1000000
+			    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
+			    PWMGenEnable(PWM0_BASE, PWM_GEN_0);
+				break;
 			case  '1':
-			   PWMGenPeriodSet(PWM0_BASE, PWM_GEN_1, configuration->period/1000*(sysPwmClock/1000000));
-			   PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
-				 PWMGenEnable(PWM0_BASE, PWM_GEN_1);
-			   break;
+			    PWMGenPeriodSet(PWM0_BASE, PWM_GEN_1, configuration->period/1000*(sysPwmClock/1000000));
+			    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
+				PWMGenEnable(PWM0_BASE, PWM_GEN_1);
+			    break;
 			case  '2':
-			   PWMGenPeriodSet(PWM0_BASE, PWM_GEN_2, configuration->period/1000*(sysPwmClock/1000000));
-			   PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
-			   PWMGenEnable(PWM0_BASE, PWM_GEN_2);
-				 break;
+			    PWMGenPeriodSet(PWM0_BASE, PWM_GEN_2, configuration->period/1000*(sysPwmClock/1000000));
+			    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
+			    PWMGenEnable(PWM0_BASE, PWM_GEN_2);
+				break;
 			case  '3':
-			   PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, configuration->period/1000*(sysPwmClock/1000000));
-			   PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
-			   PWMGenEnable(PWM0_BASE, PWM_GEN_3);
-				 break;
+			    PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, configuration->period/1000*(sysPwmClock/1000000));
+			    PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
+			    PWMGenEnable(PWM0_BASE, PWM_GEN_3);
+				break;
 			case  '4':
-			   PWMGenPeriodSet(PWM1_BASE, PWM_GEN_0, configuration->period/1000*(sysPwmClock/1000000));
-			   PWMPulseWidthSet(PWM1_BASE, PWM_OUT_0+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
-			   PWMGenEnable(PWM1_BASE, PWM_GEN_0);
-				 break;
+			    PWMGenPeriodSet(PWM1_BASE, PWM_GEN_0, configuration->period/1000*(sysPwmClock/1000000));
+			    PWMPulseWidthSet(PWM1_BASE, PWM_OUT_0+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
+			    PWMGenEnable(PWM1_BASE, PWM_GEN_0);
+				break;
 			case  '5':
-			   PWMGenPeriodSet(PWM1_BASE, PWM_GEN_1, configuration->period/1000*(sysPwmClock/1000000));
-			   PWMPulseWidthSet(PWM1_BASE, PWM_OUT_2+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
-			   PWMGenEnable(PWM1_BASE, PWM_GEN_1);
-				 break;
+			    PWMGenPeriodSet(PWM1_BASE, PWM_GEN_1, configuration->period/1000*(sysPwmClock/1000000));
+			    PWMPulseWidthSet(PWM1_BASE, PWM_OUT_2+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
+			    PWMGenEnable(PWM1_BASE, PWM_GEN_1);
+				break;
 			case  '6':
-			   PWMGenPeriodSet(PWM1_BASE, PWM_GEN_2, configuration->period/1000*(sysPwmClock/1000000));
-			   PWMPulseWidthSet(PWM1_BASE, PWM_OUT_4+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
-			   PWMGenEnable(PWM1_BASE, PWM_GEN_2);
-				 break;	
+			    PWMGenPeriodSet(PWM1_BASE, PWM_GEN_2, configuration->period/1000*(sysPwmClock/1000000));
+			    PWMPulseWidthSet(PWM1_BASE, PWM_OUT_4+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
+			    PWMGenEnable(PWM1_BASE, PWM_GEN_2);
+				break;	
 			case  '7':
-			   PWMGenPeriodSet(PWM1_BASE, PWM_GEN_3, configuration->period/1000*(sysPwmClock/1000000));
-			   PWMPulseWidthSet(PWM1_BASE, PWM_OUT_6+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
-			   PWMGenEnable(PWM1_BASE, PWM_GEN_3);
-				 break;			
+			    PWMGenPeriodSet(PWM1_BASE, PWM_GEN_3, configuration->period/1000*(sysPwmClock/1000000));
+			    PWMPulseWidthSet(PWM1_BASE, PWM_OUT_6+(uint32_t)(configuration->channel-1),configuration->pulse/1000*(sysPwmClock/1000000));
+			    PWMGenEnable(PWM1_BASE, PWM_GEN_3);
+				break;			
 			default:			 
-				 break;
+				break;
 		}
 
 	  return RT_EOK;	  
@@ -296,40 +296,40 @@ static rt_err_t tm4c123_hw_pwm_init(struct tm4c123_pwm *device)
 
 int rt_hw_pwm_init(void)
 {
-	  int i = 0;
-	  rt_size_t obj_num = sizeof(pwm_obj) / sizeof(struct tm4c123_pwm);
-	  rt_err_t result = RT_EOK;
+	int i = 0;
+	rt_size_t obj_num = sizeof(pwm_obj) / sizeof(struct tm4c123_pwm);
+	rt_err_t result = RT_EOK;
 	  
 	
-	  for(i=0 ; i< obj_num;i++)
-	 {
+	for(i=0 ; i< obj_num;i++)
+	{
 		 
-		  pwm_obj[i].config = &pwm_config[i];
-		  pwm_obj[i].pwm_device.ops = &drv_ops;		  
+		    pwm_obj[i].config = &pwm_config[i];
+		    pwm_obj[i].pwm_device.ops = &drv_ops;		  
 		  /*pwm_init*/
-		  if(tm4c123_hw_pwm_init(&pwm_obj[i])!= RT_EOK)
+		    if(tm4c123_hw_pwm_init(&pwm_obj[i])!= RT_EOK)
 			{
-				    LOG_E("%s init failed", pwm_obj[i].config->name);
-            result = -RT_ERROR;
-            return result;
+			    LOG_E("%s init failed", pwm_obj[i].config->name);
+                result = -RT_ERROR;
+                return result;
 			}
 			else
 			{
-				     LOG_D("%s init success", pwm_obj[i].config->name);
+				    LOG_D("%s init success", pwm_obj[i].config->name);
 				
 				    /* register pwm device */
-            if (rt_device_pwm_register(&pwm_obj[i].pwm_device, pwm_obj[i].config->name, &drv_ops,RT_NULL) == RT_EOK)
-            {
-                LOG_D("%s register success", pwm_obj[i].config->name);
-            }
-            else
-            {
-                LOG_E("%s register failed", pwm_obj[i].config->name);
-                result = -RT_ERROR;
-            }
+					if (rt_device_pwm_register(&pwm_obj[i].pwm_device, pwm_obj[i].config->name, &drv_ops,RT_NULL) == RT_EOK)
+					{
+						LOG_D("%s register success", pwm_obj[i].config->name);
+					}
+					else
+					{
+						LOG_E("%s register failed", pwm_obj[i].config->name);
+						result = -RT_ERROR;
+					}
 			}
 	 }
-	  return result;
+	return result;
 }
 
 #endif
