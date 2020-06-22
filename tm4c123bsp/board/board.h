@@ -16,6 +16,5 @@
 #endif /* RT_USING_PWM*/
 
 
-
 #endif /*_BOARD_H_*/
 

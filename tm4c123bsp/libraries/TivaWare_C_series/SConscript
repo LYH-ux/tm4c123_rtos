@@ -40,8 +40,8 @@ if GetDepend(['RT_USING_PWM']) or GetDepend(['RT_USING_PULSE_ENCODER']):
 #if GetDepend(['BSP_USING_ETH']):
 
 
-#if GetDepend(['RT_USING_ADC']):
-
+if GetDepend(['RT_USING_ADC']):
+    src += ['tm4c123_driverlib/src/adc.c']
 
 #if GetDepend(['RT_USING_RTC']):
 

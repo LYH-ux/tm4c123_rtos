@@ -58,7 +58,7 @@ void adc_hw_config(void)
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 
     // Select the analog ADC function for these pins.
-    GPIOPinTypeADC(GPIO_PORTD_BASE, GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7);
+    GPIOPinTypeADC(GPIO_PORTD_BASE, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3);
 
     
 }

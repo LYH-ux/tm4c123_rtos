@@ -11,7 +11,6 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 
-
 int main(void)
 {
     int count = 1;
@@ -25,6 +24,6 @@ int main(void)
         rt_pin_write(2, PIN_LOW);
         rt_thread_mdelay(500);
     }
-
+    
     return RT_EOK;
 }
