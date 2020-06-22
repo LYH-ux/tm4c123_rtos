@@ -6,6 +6,7 @@
 #include "pwm.h"
 #include "gpio.h"
 #include "uart.h"
+#include "adc.h"
 
 #include "tm4c123gh6pz_config.h"
 
@@ -14,15 +15,15 @@
 
 void uart_hw_config(void)
 {
-	  SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-	  GPIOPinConfigure(GPIO_PA0_U0RX);
+	GPIOPinConfigure(GPIO_PA0_U0RX);
     GPIOPinConfigure(GPIO_PA1_U0TX);
     GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
 	
-	  SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
-	  GPIOPinConfigure(GPIO_PC4_U1RX);
+	GPIOPinConfigure(GPIO_PC4_U1RX);
     GPIOPinConfigure(GPIO_PC5_U1TX);
     GPIOPinTypeUART(GPIO_PORTC_BASE, GPIO_PIN_4 | GPIO_PIN_5);
 	  
@@ -32,9 +33,9 @@ void uart_hw_config(void)
 
 void pwm_hw_config(void)
 {
-	  SysCtlPWMClockSet(SYSCTL_PWMDIV_2);
+	SysCtlPWMClockSet(SYSCTL_PWMDIV_2);
    //GPIO port D needs to be enabled so these pins can be used.
-	  SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 
      // Configure the GPIO pin muxing to select PWM functions for these pins.
@@ -46,3 +47,18 @@ void pwm_hw_config(void)
 	 
 }
 
+
+void adc_hw_config(void)
+{
+    // The ADC0 peripheral must be enabled for use.
+    //
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
+
+    // GPIO port D needs to be enabled
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+
+    // Select the analog ADC function for these pins.
+    GPIOPinTypeADC(GPIO_PORTD_BASE, GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7);
+
+    
+}
