@@ -17,11 +17,11 @@
 
 static const struct pin_index pins[] = 
 {
-  	_TM4C_PIN(0 ,F, 0 ),
+    _TM4C_PIN(0 ,F, 0 ),
     _TM4C_PIN(1 ,F, 1 ),
     _TM4C_PIN(2 ,F, 2 ),
-	  _TM4C_PIN(3 ,F, 3 ),
-	  _TM4C_PIN(4 ,F, 4 )
+    _TM4C_PIN(3 ,F, 3 ),
+    _TM4C_PIN(4 ,F, 4 )
 };
 
 
@@ -191,7 +191,7 @@ const static struct rt_pin_ops _tm4c123_pin_ops =
 
 int rt_hw_pin_init(void)
 {
-		SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
     return rt_device_pin_register("pin", &_tm4c123_pin_ops, RT_NULL);
 }
 INIT_BOARD_EXPORT(rt_hw_pin_init);

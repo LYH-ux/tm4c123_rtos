@@ -97,7 +97,6 @@ static struct tm4c123_uart uart_obj[sizeof(uart_config) / sizeof(uart_config[0])
 
 //rtservice.h
 //#define  rt_container_of(ptr, type, member)   ((type *)((char *)(ptr) - (unsigned long)(&((type *)0)->member)))
-//获取结构体中member成员在这个结构体中的偏移，实际是获得该结构体首地址
 
 static rt_err_t tm4c123_configure(struct rt_serial_device *serial, struct serial_configure *cfg)
 {

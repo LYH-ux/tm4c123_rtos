@@ -10,8 +10,6 @@
  */
  
 #include <stdint.h>
-#include <rthw.h>
-#include <rtthread.h>
 #include <stdbool.h>
 #include "hw_ints.h"
 #include "hw_sysctl.h"
@@ -30,21 +28,6 @@
 // frequency supplied to the SysTick timer and the processor 
 // core clock.
 uint32_t SystemCoreClock;
-
-
-#if defined(RT_USING_USER_MAIN) && defined(RT_USING_HEAP)
-
-#define TM4C123_SRAM1_START              (0x20000000)      
-#define TM4C123_SRAM1_END                (TM4C123_SRAM1_START + 32 * 1024)   // end address = 0x20000000(base adddress) + 32K(RAM size)
-
-#if defined(__CC_ARM) || defined(__CLANG_ARM)
-extern int Image$$RW_IRAM$$ZI$$Limit;                   // RW_IRAM1
-#define HEAP_BEGIN      ((void *)&Image$$RW_IRAM$$ZI$$Limit)
-#endif
-
-#define HEAP_END                       TM4C123_SRAM1_END
-
-#endif
 
 
 
@@ -99,7 +82,7 @@ void rt_hw_board_init()
 	  rt_console_set_device(RT_CONSOLE_DEVICE_NAME);
 
 #if defined(RT_USING_USER_MAIN) && defined(RT_USING_HEAP)
-                  rt_system_heap_init((void *)HEAP_BEGIN, (void *)HEAP_END);
+    rt_system_heap_init((void *)HEAP_BEGIN, (void *)HEAP_END);
 	  
 #endif
 

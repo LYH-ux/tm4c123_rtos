@@ -13,7 +13,7 @@ extern "C" {
     {                                                               \
         .name = "uart0",                                            \
 			  .uartbase = UART0_BASE,                                     \
-			  .baudrate = 921600,                                         \
+			  .baudrate = 115200,                                         \
 			  .mode     = UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |     \
                              UART_CONFIG_PAR_NONE                   \
     }

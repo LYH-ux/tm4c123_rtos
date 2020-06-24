@@ -11,7 +11,8 @@ extern "C" {
 
 void uart_hw_config(void);	
 void pwm_hw_config(void);	
-void adc_hw_config(void);	
+void adc_hw_config(void);
+void spi_hw_config(void);	
 	
 #ifdef __cplusplus
 }

@@ -84,6 +84,7 @@
 #define RT_USING_PIN
 #define RT_USING_ADC
 #define RT_USING_PWM
+#define RT_USING_SPI
 
 /* Using USB */
 
@@ -166,6 +167,8 @@
 #define BSP_USING_UART
 #define BSP_USING_UART0
 #define BSP_USING_UART1
+#define BSP_USING_SPI
+#define BSP_USING_SPI0
 #define BSP_USING_PWM
 #define BSP_USING_PWM7
 #define BSP_USING_ADC
