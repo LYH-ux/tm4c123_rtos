@@ -17,7 +17,7 @@
 
 #ifdef  RT_USING_ADC
 #include "adc_config.h"
-#include "tm4c123gh6pz_config.h"
+#include "tm4c123_config.h"
 #include <string.h>
 
 #define LOG_TAG             "drv.adc"

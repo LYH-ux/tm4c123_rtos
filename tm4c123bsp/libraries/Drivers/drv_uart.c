@@ -21,7 +21,7 @@
 
 #ifdef RT_USING_SERIAL
 #include "uart_config.h"
-#include "tm4c123gh6pz_config.h"
+#include "tm4c123_config.h"
 
 #define   LOG_TAG  "drv.uart"
 #include <drv_log.h>
