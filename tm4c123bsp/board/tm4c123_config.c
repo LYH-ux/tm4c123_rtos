@@ -15,19 +15,19 @@
 #include "driverlib/pin_map.h"
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
-#include "tm4c123gh6pz_config.h"
+#include "tm4c123_config.h"
 
 #ifdef RT_USING_SERIAL
-#include "driverlib/uart.h"
+    #include "driverlib/uart.h"
 #endif /* RT_USING_SERIAL */
 #ifdef RT_USING_ADC
-#include "driverlib/adc.h"
+    #include "driverlib/adc.h"
 #endif /* RT_USING_ADC */
 #ifdef RT_USING_PWM
-#include "driverlib/pwm.h"
+    #include "driverlib/pwm.h"
 #endif /* RT_USING_PWM */
 #ifdef RT_USING_SPI
-#include "driverlib/ssi.h"
+    #include "driverlib/ssi.h"
 #endif /* RT_USING_SPI */
 
 

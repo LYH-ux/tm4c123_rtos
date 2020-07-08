@@ -35,3 +35,4 @@ void spi_hw_config(void);
 #endif /*__TM4C123GH6PZ_CONFIG_H__*/
 
 /************************** end of file ******************/
+
