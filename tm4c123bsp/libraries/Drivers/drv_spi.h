@@ -47,3 +47,4 @@ struct tm4c123_spi_device
 #endif /*__DRV_SPI_H__ */
 
 /************************** end of file ******************/
+

@@ -50,7 +50,7 @@ void uart_hw_config(void)
 #endif /* RT_USING_SERIAL */
 
 #ifdef RT_USING_ADC
-void adc_hw_config(void)
+void adc_hw_config(void *userdata)
 {
     /* ADC0 */
     SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
@@ -63,7 +63,7 @@ void adc_hw_config(void)
 void pwm_hw_config(void)
 {
     /* PWM7 (PWM1 module,M1PWM6 and M1PWM7) */
-    SysCtlPWMClockSet(SYSCTL_PWMDIV_2);
+    SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
     GPIOPinConfigure(GPIO_PF2_M1PWM6);

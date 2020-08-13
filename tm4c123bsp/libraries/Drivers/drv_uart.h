@@ -44,3 +44,4 @@ extern int rt_hw_usart_init(void);
 #endif /*__DRV_UART_H__*/
 
 /************************** end of file ******************/
+

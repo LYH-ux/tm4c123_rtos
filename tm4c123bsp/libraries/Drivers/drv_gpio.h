@@ -37,3 +37,4 @@ extern int rt_hw_pin_init(void);
 #endif  /*__DRV_GPIO_H__*/
 
 /************************** end of file ******************/
+

@@ -6,6 +6,7 @@
  * Change Logs:
  * Date           Author       Notes
  * 2020-06-27     AHTYDHD      the first version
+ * 2020-07-10     AHTYDHD      change tm4c123_adc_enable
  */
 
 #include "drv_adc.h"
@@ -40,6 +41,7 @@ struct tm4c123_adc
 };
 
 static struct tm4c123_adc   adc_obj[sizeof(adc_config) / sizeof(adc_config[0])] = {0};
+static bool   flag_adc_enabled = false; 
 
 static rt_err_t tm4c123_adc_enabled(struct rt_adc_device *device, rt_uint32_t channel, rt_bool_t enabled)
 {
@@ -63,8 +65,9 @@ static rt_err_t tm4c123_get_adc_value(struct rt_adc_device *device, rt_uint32_t 
 
     RT_ASSERT(device != RT_NULL);
     RT_ASSERT(value != RT_NULL);
+    RT_ASSERT(channel < 8 );
 
-    uint32_t    pui32ADC0Value[4] = {0};
+    uint32_t    pui32ADC0Value[8] = {0};
     struct tm4c123_adc_config   *config = (struct tm4c123_adc_config *)device->parent.user_data;
 
     /* Trigger the ADC conversion. */
@@ -101,14 +104,38 @@ static rt_err_t tm4c123_hw_adc_init(struct tm4c123_adc *device)
 
     ADCSequenceConfigure(adcbase, sequencenum,
                          device->config->trigermode, 0);
-
-    ADCSequenceStepConfigure(adcbase, sequencenum, 0, ADC_CTL_CH7);
-    ADCSequenceStepConfigure(adcbase, sequencenum, 1, ADC_CTL_CH6 | ADC_CTL_IE);
-    ADCSequenceStepConfigure(adcbase, sequencenum, 2, ADC_CTL_CH5);
-    /*Tell the ADC logic
-      that this is the last conversion on sequence 3 (ADC_CTL_END). */
-    ADCSequenceStepConfigure(adcbase, sequencenum, 3, ADC_CTL_CH4 | ADC_CTL_IE |
-                             ADC_CTL_END);
+    switch (sequencenum)
+    {
+    case 0:
+        ADCSequenceStepConfigure(adcbase, sequencenum, 0, device->config->channel_sequence[0]);
+        ADCSequenceStepConfigure(adcbase, sequencenum, 1, device->config->channel_sequence[1]);
+        ADCSequenceStepConfigure(adcbase, sequencenum, 2, device->config->channel_sequence[2]);
+        ADCSequenceStepConfigure(adcbase, sequencenum, 3, device->config->channel_sequence[3] | ADC_CTL_IE);
+        ADCSequenceStepConfigure(adcbase, sequencenum, 4, device->config->channel_sequence[4]);
+        ADCSequenceStepConfigure(adcbase, sequencenum, 5, device->config->channel_sequence[5]);
+        ADCSequenceStepConfigure(adcbase, sequencenum, 6, device->config->channel_sequence[6]);
+        /*Tell the ADC logic
+        that this is the last conversion on sequence 3 (ADC_CTL_END). */
+        ADCSequenceStepConfigure(adcbase, sequencenum, 7, device->config->channel_sequence[7] | ADC_CTL_IE |
+                                 ADC_CTL_END);
+        break;
+    case 1:
+    case 2:
+        ADCSequenceStepConfigure(adcbase, sequencenum, 0, device->config->channel_sequence[0]);
+        ADCSequenceStepConfigure(adcbase, sequencenum, 1, device->config->channel_sequence[1] | ADC_CTL_IE);
+        ADCSequenceStepConfigure(adcbase, sequencenum, 2, device->config->channel_sequence[2]);
+        /*Tell the ADC logic
+        that this is the last conversion on sequence 3 (ADC_CTL_END). */
+        ADCSequenceStepConfigure(adcbase, sequencenum, 3, device->config->channel_sequence[3] | ADC_CTL_IE |
+                                ADC_CTL_END);
+        break;
+    case 3:
+        ADCSequenceStepConfigure(adcbase, sequencenum, 0, device->config->channel_sequence[0] | ADC_CTL_IE |
+                                ADC_CTL_END);
+        break;        
+    default:
+        break;
+    }
     return RT_EOK;
 }
 
@@ -119,7 +146,7 @@ static int tm4c123_adc_init(void)
     rt_size_t obj_num = sizeof(adc_obj) / sizeof(struct tm4c123_adc);
     rt_err_t result = RT_EOK;
 
-    adc_hw_config();
+    adc_hw_config(RT_NULL);
 
     for (i = 0; i < obj_num; i++)
     {

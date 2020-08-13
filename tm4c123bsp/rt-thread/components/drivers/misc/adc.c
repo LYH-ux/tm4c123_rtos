@@ -7,6 +7,7 @@
  * Date           Author       Notes
  * 2018-05-07     aozima       the first version
  * 2018-11-16     Ernest Chen  add finsh command and update adc function
+ * 2020-07-10     AHTYDHD      change _adc_read and
  */
 
 #include <rtthread.h>

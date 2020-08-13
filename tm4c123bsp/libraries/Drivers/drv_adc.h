@@ -22,6 +22,7 @@ struct tm4c123_adc_config
     uint32_t    adcbase;
     uint32_t    channel;
     uint32_t    sequence;
+    uint32_t    channel_sequence[8];
     uint32_t    trigermode;
     uint32_t    sequencepriority;
 };

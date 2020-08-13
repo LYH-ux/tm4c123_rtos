@@ -14,6 +14,8 @@
 #include <rthw.h>
 #include <rtthread.h>
 
+extern uint32_t SystemCoreClock;
+
 #if defined(RT_USING_USER_MAIN) && defined(RT_USING_HEAP)
     #define TM4C123_SRAM1_START              (0x20000000)
     #define TM4C123_SRAM1_END                (TM4C123_SRAM1_START + 32 * 1024)   // end address = 0x20000000(base adddress) + 32K(RAM size)

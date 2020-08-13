@@ -19,7 +19,7 @@ extern "C" {
 void uart_hw_config(void);
 #endif /* RT_USING_SERIAL */
 #ifdef RT_USING_ADC
-void adc_hw_config(void);
+void adc_hw_config(void *userdata);
 #endif /* RT_USING_ADC */
 #ifdef RT_USING_PWM
 void pwm_hw_config(void);

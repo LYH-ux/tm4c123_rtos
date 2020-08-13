@@ -34,3 +34,4 @@ int rt_hw_pwm_init(void);
 #endif /*__DRV_PWM_H__*/
 
 /************************** end of file ******************/
+

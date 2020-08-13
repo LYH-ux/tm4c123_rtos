@@ -23,6 +23,8 @@ extern "C" {
         .adcbase                 = ADC0_BASE,               \
         .channel                 = 0 ,                      \
         .sequence                = 2 ,                      \
+        .channel_sequence        = {ADC_CTL_CH7,ADC_CTL_CH6,ADC_CTL_CH5,ADC_CTL_CH4,\
+                                    0,0,0,0},               \
         .trigermode              = ADC_TRIGGER_PROCESSOR,   \
         .sequencepriority        = 0                        \
     }
@@ -37,6 +39,8 @@ extern "C" {
         .adcbase                 = ADC1_BASE,               \
         .channel                 = 0     ,                  \
         .sequence                = 3     ,                  \
+        .channel_sequence        = {ADC_CTL_CH7,ADC_CTL_CH6,ADC_CTL_CH5,ADC_CTL_CH4,\
+                                    0,0,0,0}                \
         .syncMode                = ADC_TRIGGER_PROCESSOR,   \
         .sequencepriority        = 0                        \
     }

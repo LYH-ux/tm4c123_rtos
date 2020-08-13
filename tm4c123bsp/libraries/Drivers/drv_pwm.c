@@ -165,7 +165,9 @@ static rt_err_t drv_pwm_get(char *name, struct rt_pwm_configuration *configurati
 static rt_err_t drv_pwm_set(char *name, struct rt_pwm_configuration *configuration)
 {
 
-    uint32_t  sysPwmClock = SysCtlPWMClockGet();
+    uint32_t  sysPwmClock = SysCtlClockGet();
+	  rt_kprintf("%d\n",sysPwmClock);
+	  rt_kprintf("%d\n",configuration->period / 1000 * (sysPwmClock / 1000000));
     switch (name[3])
     {
     case  '0':
