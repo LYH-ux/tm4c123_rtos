@@ -62,13 +62,26 @@ void adc_hw_config(void *userdata)
 #ifdef RT_USING_PWM
 void pwm_hw_config(void)
 {
-    /* PWM7 (PWM1 module,M1PWM6 and M1PWM7) */
     SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
+#ifdef BSP_USING_PWM3
+    /* PWM7 (PWM1 module,M1PWM6 and M1PWM7) */
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM0);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
+    GPIOPinConfigure(GPIO_PD0_M0PWM6);
+    GPIOPinConfigure(GPIO_PD1_M0PWM7);
+    GPIOPinTypePWM(GPIO_PORTD_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+#endif /* BSP_USING_PWM3*/
+
+#ifdef BSP_USING_PWM7
+    /* PWM7 (PWM1 module,M1PWM6 and M1PWM7) */
+    //SysCtlPWMClockSet(SYSCTL_PWMDIV_1);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
     GPIOPinConfigure(GPIO_PF2_M1PWM6);
     GPIOPinConfigure(GPIO_PF3_M1PWM7);
     GPIOPinTypePWM(GPIO_PORTF_BASE, GPIO_PIN_2 | GPIO_PIN_3);
+#endif /* BSP_USING_PWM7*/
+
 }
 #endif /* RT_USING_PWM */
 
