@@ -177,17 +177,17 @@ static rt_err_t drv_pwm_set(char *name, struct rt_pwm_configuration *configurati
         break;
     case  '1':
         PWMGenPeriodSet(PWM0_BASE, PWM_GEN_1, configuration->period / 1000 * (sysPwmClock / 1000000));
-        PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0 + (uint32_t)(configuration->channel - 1), configuration->pulse / 1000 * (sysPwmClock / 1000000));
+        PWMPulseWidthSet(PWM0_BASE, PWM_OUT_2 + (uint32_t)(configuration->channel - 1), configuration->pulse / 1000 * (sysPwmClock / 1000000));
         PWMGenEnable(PWM0_BASE, PWM_GEN_1);
         break;
     case  '2':
         PWMGenPeriodSet(PWM0_BASE, PWM_GEN_2, configuration->period / 1000 * (sysPwmClock / 1000000));
-        PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0 + (uint32_t)(configuration->channel - 1), configuration->pulse / 1000 * (sysPwmClock / 1000000));
+        PWMPulseWidthSet(PWM0_BASE, PWM_OUT_4 + (uint32_t)(configuration->channel - 1), configuration->pulse / 1000 * (sysPwmClock / 1000000));
         PWMGenEnable(PWM0_BASE, PWM_GEN_2);
         break;
     case  '3':
         PWMGenPeriodSet(PWM0_BASE, PWM_GEN_3, configuration->period / 1000 * (sysPwmClock / 1000000));
-        PWMPulseWidthSet(PWM0_BASE, PWM_OUT_0 + (uint32_t)(configuration->channel - 1), configuration->pulse / 1000 * (sysPwmClock / 1000000));
+        PWMPulseWidthSet(PWM0_BASE, PWM_OUT_6 + (uint32_t)(configuration->channel - 1), configuration->pulse / 1000 * (sysPwmClock / 1000000));
         PWMGenEnable(PWM0_BASE, PWM_GEN_3);
         break;
     case  '4':
